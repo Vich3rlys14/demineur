@@ -91,7 +91,7 @@ class Field ():
       return False
 
     if case.type == 'mine':
-      case.type = 'mine_expl'
+      case.setType('mine_expl')
       self.lost()
 
     elif case.type == 'safe':
@@ -121,7 +121,7 @@ class Field ():
         if neighbor.state == 'hidden' :
           neighbor.state = 'cleared'
           if neighbor.type == 'mine':
-            neighbor.type ='mine_expl'
+            neighbor.setType('mine_expl')
             self.lost()
             return False
 
