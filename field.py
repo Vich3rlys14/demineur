@@ -78,34 +78,6 @@ class Field ():
             neighbor = self.getCase( (pos_x , pos_y))
             yield neighbor
 
-
-  def clearAllFromRecursive(self, pos):
-    """ 
-     -Utiliser une fonction recursive cause des bug lier au limites
-    de recursion quand les dimension de la taille de la liste "field"
-    est trop grande
-
-    """
-    case = self.getCase(pos)
-    if case.state == 'hidden':
-      return False
-
-    if case.type == 'mine':
-      case.setType('mine_expl')
-      self.lost()
-
-    elif case.type == 'safe':
-      case.state = 'cleared'
-      if self.countFlags(case) != case.bombcount:
-        pass
-      else :
-        for neighbor in self.getNeighbors(case):
-          if neighbor.state != 'cleared' and neighbor.state != 'flagged':
-            neighbor.state = 'cleared'
-            if (neighbor.bombcount == 0 ):
-              self.clearAllFrom(neighbor.pos)
-
-
   def clearAllFrom(self, pos):
     origincase = self.getCase(pos)
 
