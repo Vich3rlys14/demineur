@@ -19,13 +19,13 @@ expl = scale(pygame.image.load("./Images/perdu.bmp"))
 hidden = scale(pygame.image.load("./Images/nonpassee.bmp"))
 # Image pour nombre de 1 a 8
 img_num = [ empt if n == 0 else scale(pygame.image.load("./Images/"+str(n)+".bmp")) for n in range(9)]
-	
+  
 
 images  = {
-	'hidden':hidden,
-	'number':img_num,
-	'mine': mine,
-	'perdu': mine2,
-	'mine_expl': expl,
-	'flag': flag
+  'hidden':hidden,
+  'number':img_num,
+  'mine': mine,
+  'perdu': mine2,
+  'mine_expl': expl,
+  'flag': flag
 }
