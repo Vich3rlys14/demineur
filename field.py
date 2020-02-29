@@ -84,9 +84,7 @@ class Field ():
     if origincase.state == 'hidden' or origincase.bombcount != self.countFlags(origincase) or origincase.state == 'flagged':
       return False
 
-
     caseQueue = [origincase]
-    x = 0
 
     for case in caseQueue:
       for neighbor in self.getNeighbors(case):
